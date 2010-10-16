@@ -1,2 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% if user_signed_in? %>
+	<p>signed in</p>
+<% else %>
+	<p>not signed in</p>
+<% end %>
