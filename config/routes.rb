@@ -1,7 +1,7 @@
 Offbudget::Application.routes.draw do
   devise_for :users
 
-  root :to => 'pages#home'
+  root :to => 'pages#index'
  
  end
  
