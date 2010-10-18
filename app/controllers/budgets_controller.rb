@@ -4,13 +4,22 @@ class BudgetsController < ApplicationController
   end
 
   def create
+    name = params[:budget][:name]
     @budget  = current_user.budgets.build(params[:budget])
     if @budget.save
-      flash[:success] = "Budget created!"
-      redirect_to index
+      flash[:success] = "#{name} created!"
+      redirect_to budgets_url
     else
-      render index
+      render budgets_url
     end
+    
   end
 
+  def destroy
+    name = Budget.find(params[:id]).name
+    Budget.find(params[:id]).destroy
+    flash[:success] = "#{name} deleted."
+    redirect_to budgets_url
+  end
+  
 end

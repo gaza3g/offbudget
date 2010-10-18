@@ -1,12 +1,4 @@
 Offbudget::Application.routes.draw do
-  
-  get "budgets/index"
-
-  get "budgets/create"
-
-  get "budget/index"
-
-  get "budget/create"
 
   resources :budgets
 

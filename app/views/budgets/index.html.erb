@@ -1,13 +1,18 @@
 <% if user_signed_in? %>
   <table class="front" summary="For signed-in users">
-    <tr>
-      <td class="main">
-        <h1 class="micropost">What's up?</h1>
-        <%= render 'shared/budget_form' %>
-      </td>
-	  <td class="sidebar round">
-        <%= render 'shared/budget_info' %>
-      </td>
+		<tr>
+			<td class="main">
+				<h1 class="micropost">Budgets</h1>
+				<%= render 'shared/budget_form' %>
+			</td>
+		</tr>
+		<tr>
+			<% if current_user.budgets.any? %>
+			<td class="round">
+		        <%= render 'shared/budget_info' %>
+		      </td>
+			<% end %>
+		</td>
     </tr>
   </table>
 <% else %>
