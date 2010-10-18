@@ -1,10 +1,17 @@
 class PagesController < ApplicationController
   
-  def home
-    @title = 'Home'
+  def create
+    @micropost  = current_user.microposts.build(params[:micropost])
+    if @micropost.save
+      flash[:success] = "Micropost created!"
+      redirect_to root_path
+    else
+      render 'pages/home'
+    end
   end
 
   def index
+    render :index
   end
   
 end

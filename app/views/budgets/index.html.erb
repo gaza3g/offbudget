@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">What's up?</h1>
+        <%= render 'shared/budget_form' %>
+      </td>
+	  <td class="sidebar round">
+        <%= render 'shared/budget_info' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <h1>Please sign in or sign up</h1>
+
+  <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
+
+<% end %>
