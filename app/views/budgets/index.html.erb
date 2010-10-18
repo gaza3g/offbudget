@@ -7,11 +7,12 @@
 			</td>
 		</tr>
 		<tr>
-			<% if current_user.budgets.any? %>
 			<td class="round">
-		        <%= render 'shared/budget_info' %>
-		      </td>
-			<% end %>
+				<div id="budget-list">
+		        	<%= render 'shared/budget_info' %>
+				</div>
+		  	</td>
+
 		</td>
     </tr>
   </table>

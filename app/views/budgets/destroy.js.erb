@@ -1,0 +1,2 @@
+$("#budget-list").html("<%= escape_javascript(render('shared/budget_info')) %>")
+$("#notice").html('<div class="flash success"><%= escape_javascript(flash.delete(:success)) %></div>');
