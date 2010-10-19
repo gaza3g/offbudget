@@ -10,12 +10,25 @@ class BudgetsController < ApplicationController
     respond_to do |format|
       if @budget.save
         flash[:success] = "#{name} created!"
-        #redirect_to budgets_url
         format.html { redirect_to budgets_url }
         format.js
       else
-        #render budgets_url
         format.html { render budgets_url}
+      end
+    end
+  end
+
+  def update
+    @new_budgetname = params[:value]
+    @budget = Budget.find( params[:id] )
+    @old_budgetname = @budget.name
+    respond_to do |format|
+      if @budget.update_attributes( :name => @new_budgetname )
+        flash[:success] = "Renamed '#{@old_budgetname}' to '#{@new_budgetname}'"
+        
+        format.js
+      else
+        format.html { render budgets_url }
       end
     end
   end
@@ -31,7 +44,8 @@ class BudgetsController < ApplicationController
         format.html {render budgets_url}
       end
     end
-    #redirect_to budgets_path
   end
+  
+  
   
 end

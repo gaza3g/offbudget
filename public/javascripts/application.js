@@ -1,2 +1,16 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+	
+	$('.budget-edit').editable('/budget/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put'
+	  });
+    
+ });
+
+
+
