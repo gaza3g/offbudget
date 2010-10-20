@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
   end
   
   def destroy
+    puts params[:confirm]
     respond_to do |format|
       item = Item.find(params[:id])
       @budget = Budget.find(item.budget_id)

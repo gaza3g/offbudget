@@ -19,7 +19,16 @@ $(document).ready(function() {
 	    tooltip		:	'Click to edit...',
 		method		: 	'put'
 	  });
-    
+	
+	$('a.delete').click (function(){
+	        if(confirm("Are you sure?")){
+	            return true;
+	        } else {
+	            //they clicked no.
+	            return false;
+	        }
+	});
+	
  });
 
 
