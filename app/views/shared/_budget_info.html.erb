@@ -1,13 +1,15 @@
 <% get_all_user_budgets(current_user.id).each do |budget| %>
 	<ul>
 		<li>
-			<div>
-			<span class="budget-edit" id="<%=budget.id%>"><%=budget.name %></span>&nbsp;
-			<span> <%= link_to "delete", budget, 	:remote => true, 
-													:method => :delete, 
-													:confirm => "Are you sure?", 
-													:title => "Delete #{budget.name}" %>
-			</span>
+			<div style="width: 315px;">
+				<ul style="padding: 0;margin:0">
+					<li class="budget-edit" id="<%=budget.id%>"><%=budget.name %></li>
+					<li class="budget-delete"> <%= link_to "delete", budget, 	:remote => true, 
+															:method => :delete, 
+															:confirm => "Are you sure?", 
+															:title => "Delete #{budget.name}" %>
+					</li>
+				</ul>
 			</div>
 			<div id="item-list-<%=budget.id%>">
 				<%= render 'shared/item_info', :budget => budget %>

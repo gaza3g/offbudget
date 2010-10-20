@@ -42,6 +42,11 @@ a:visited {
   color: #069;
 }
 
+/* Lists */
+
+ul li {
+	list-style-type: none;
+}
 
 /* Navigation */
 
@@ -166,7 +171,21 @@ footer nav {
 }
 
 
+li.budget-edit, li.budget-delete {
+	display: inline-block;
+}
+
+
+li.budget-delete
+{
+	float: right;
+	font-weight: bold;
+
+}
+
+
 /* Items */
+
 
 .item-edit, .item-edit-sample {
 	color: #0B486B;
@@ -174,6 +193,21 @@ footer nav {
 	font-size: small;
 }
 
+
+li.item-edit, li.item-amount, li.item-delete {
+	list-style-type: none;
+	display: inline-block;
+}
+
+li.item-edit {
+	width: 130px;
+}
+
+li.item-delete
+{
+	float: right;
+
+}
 
 .item-field {
 	font-size: small;
