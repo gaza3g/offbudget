@@ -16,15 +16,28 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @new_itemname = params[:value]
+    @new_value = params[:value]
     @item = Item.find( params[:id] )
-    @old_itemname = @item.name
-    respond_to do |format|
-      if @item.update_attributes( :name => @new_itemname )
-        flash[:success] = "Renamed '#{@old_itemname}' to '#{@new_itemname}'"
-        format.js
-      else
-        format.html { render budgets_url }
+    @old_value = ""
+    if params[:attribute] == "name"
+      @old_value = @item.name
+      respond_to do |format|
+        if @item.update_attributes( :name => @new_value )
+          flash[:success] = "Renamed '#{@old_value}' to '#{@new_value}'"
+          format.js
+        else
+          format.html { render budgets_url }
+        end
+      end
+    else
+      @old_value = @item.amount
+      respond_to do |format|
+        if @item.update_attributes( :amount => @new_value )
+          flash[:success] = "Renamed '#{@old_value}' to '#{@new_value}'"
+          format.js
+        else
+          format.html { render budgets_url }
+        end
       end
     end
   end

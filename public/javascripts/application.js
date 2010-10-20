@@ -17,7 +17,19 @@ $(document).ready(function() {
 	    submit		:	'OK',
 	    indicator	:	'Saving...',
 	    tooltip		:	'Click to edit...',
-		method		: 	'put'
+		method		: 	'put',
+		submitdata 	: 	{attribute : "name"}
+	  });
+	
+	$('.item-amount').editable('/item/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put',
+		submitdata 	: 	{attribute : "amount"}
 	  });
 	
 	$('a.delete').click (function(){
