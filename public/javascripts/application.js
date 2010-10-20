@@ -9,6 +9,16 @@ $(document).ready(function() {
 	    tooltip		:	'Click to edit...',
 		method		: 	'put'
 	  });
+	
+	$('.item-edit').editable('/item/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put'
+	  });
     
  });
 

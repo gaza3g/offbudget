@@ -1,8 +1,8 @@
-class Budget < ActiveRecord::Base
-  attr_accessible :id, :name, :user_id
+class Item < ActiveRecord::Base
   
-  belongs_to  :user
-  has_many    :items, :dependent => :destroy
+  attr_accessible :id, :name, :amount, :budget_id
+  
+  belongs_to :budget
   
   validates :name, :length => { :minimum => 3, :maximum => 50 }
   
@@ -13,5 +13,5 @@ class Budget < ActiveRecord::Base
     def capitalize_name
       self.name = self.name.capitalize
     end
-  
+    
 end

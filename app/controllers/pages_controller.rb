@@ -11,7 +11,11 @@ class PagesController < ApplicationController
   end
 
   def index
-    render :index
+    if user_signed_in?
+      redirect_to budgets_url
+    else
+      render :index
+    end
   end
   
 end

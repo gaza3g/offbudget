@@ -1,7 +1,14 @@
 class BudgetsController < ApplicationController
+  before_filter :load
+  
+  def load
+    if user_signed_in?
+      @budget ||= Budget.new
+      @item ||= Item.new
+    end
+  end
   
   def index
-    @budget = Budget.new if user_signed_in?
   end
 
   def create

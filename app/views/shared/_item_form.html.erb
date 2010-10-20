@@ -1,0 +1,12 @@
+<%= form_for @item, :remote => true do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="item-field">
+	<div><strong>Add an item: </strong></div>
+	<%= f.label :name, 'Item' %>:
+    <%= f.text_field :name, :size => 10 %>&nbsp;
+	<%= f.label :amount %>:
+ 	$<%= f.text_field :amount, :size => 10 %>
+	<%= f.hidden_field :budget_id, { :value => budget.id } %>
+	<%= f.submit "Add" %>
+  </div>
+<% end %>

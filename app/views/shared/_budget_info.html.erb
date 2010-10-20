@@ -3,11 +3,17 @@
 		<li>
 			<div>
 			<span class="budget-edit" id="<%=budget.id%>"><%=budget.name %></span>&nbsp;
-			<span>| <%= link_to "delete", budget, 	:remote => true, 
+			<span> <%= link_to "delete", budget, 	:remote => true, 
 													:method => :delete, 
 													:confirm => "Are you sure?", 
 													:title => "Delete #{budget.name}" %>
 			</span>
+			</div>
+			<div id="item-list-<%=budget.id%>">
+				<%= render 'shared/item_info', :budget => budget %>
+			</div>
+			<div id="item-form">
+				<%= render 'shared/item_form', :budget => budget %>
 			</div>
 		</li>
 	</ul>

@@ -1,7 +1,7 @@
 <%= form_for @budget, :remote => true do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-	<h6>Create a new budget: </h6>
+	<h6>Create a new budget category: </h6>
     <%= f.text_field :name %> 
 	<%= f.submit "Create" %>
   </div>

@@ -157,3 +157,53 @@ footer nav {
   font-size: 12px;
   list-style: square;
 }
+
+/* Budgets */
+
+.budget-edit, .budget-edit-sample {
+	color: #5A2E2E;
+	font-weight: bold;
+}
+
+
+/* Items */
+
+.item-edit, .item-edit-sample {
+	color: #0B486B;
+	font-weight: bold;
+	font-size: small;
+}
+
+
+.item-field {
+	font-size: small;
+}
+
+.item-field input[type=text] {
+	font-weight: bold;
+	color: #555152;
+}
+
+.item-amount, .item-amount-sample {
+	font-weight: bold;
+	color: #CC2A41;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
