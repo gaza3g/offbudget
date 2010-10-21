@@ -4,9 +4,10 @@
 			<div style="width: 315px;">
 				<ul style="padding: 0;margin:0">
 					<li class="budget-edit" id="<%=budget.id%>"><%=budget.name %></li>
-					<li class="budget-delete"> <%= link_to "delete", budget, 	:remote => true, 
-															:method => :delete, 
-															:confirm => "Are you sure?", 
+					<li class="budget-delete"> <%= link_to "delete", budget, 
+															:remote => true, 
+															:class => "budget-delete-link",
+															:method => :delete,
 															:title => "Delete #{budget.name}" %>
 					</li>
 				</ul>
@@ -21,5 +22,27 @@
 	</ul>
 <% end %>
 
+<% javascript_tag  do -%>
+	$('.budget-edit').editable('/budget/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put'
+	});
+	
+	$('a.budget-delete-link').click (function(){
+	    if(confirm("Are you sure?"))
+		{
+	        return true;
+	    } 
+		else 
+		{
+	        return false;
+	    }
+	});
+<% end -%>
 
 

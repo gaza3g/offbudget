@@ -18,3 +18,16 @@
 		<% end%>
 	<% end %>
 </div>
+
+<% javascript_tag  do -%>
+    $('#income-disposable .amount .edit').editable('/income/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put'
+	});
+	
+<% end -%>
