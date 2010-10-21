@@ -10,10 +10,10 @@ class ItemsController < ApplicationController
   
   def create
     @current_budget = Budget.find(params[:item][:budget_id])
-    item  = @current_budget.items.build(params[:item])
+    @item  = @current_budget.items.build(params[:item])
     respond_to do |format|
-      if item.save
-        flash[:success] = "#{item.name} created!"
+      if @item.save
+        flash[:success] = "#{@item.name} created!"
         format.html { redirect_to budgets_url }
         format.js
       else
