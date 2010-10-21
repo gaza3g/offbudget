@@ -4,6 +4,7 @@
 	$("#income-info").html("<%= escape_javascript(render('shared/income_info')) %>")
 	$(".item-<%=@item.id%>").effect("highlight", {}, 3000);
 	$("#income-deduction .amount").effect("highlight", {}, 3000);
+	
 	$('.item-edit').editable('/item/update', {
 	    name		:	$(this).attr('name'),
 	    id			:	$(this).attr('id'),
