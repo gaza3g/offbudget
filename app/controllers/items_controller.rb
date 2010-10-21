@@ -1,4 +1,12 @@
 class ItemsController < ApplicationController
+  before_filter :load
+  
+  def load
+    if user_signed_in?
+      @item ||= Item.new
+      @income ||= Income.new
+    end
+  end
   
   def create
     @current_budget = Budget.find(params[:item][:budget_id])
