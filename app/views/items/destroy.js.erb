@@ -1,5 +1,7 @@
 $("#item-list-<%=@budget.id%>").html("<%= escape_javascript(render 'shared/item_info', :budget => @budget ) %>")
 $("#notice").html('<div class="flash success"><%= escape_javascript(flash.delete(:success)) %></div>');
+$("#income-info").html("<%= escape_javascript(render('shared/income_info')) %>")
+$("#income-deduction .amount").effect("highlight", {}, 3000);
 
 $('.item-edit').editable('/item/update', {
     name		:	$(this).attr('name'),
