@@ -1,7 +1,6 @@
 $("#income-info").html("<%= escape_javascript(render('shared/income_info')) %>")
 $("#notice").html('<div class="flash success"><%= escape_javascript(flash.delete(:success)) %></div>');
-
-$('#income-disposable.amount.edit').editable('/income/update', {
+$('#income-disposable .amount .edit').editable('/income/update', {
     name		:	$(this).attr('name'),
     id			:	$(this).attr('id'),
     cancel		:	'Cancel',
@@ -9,4 +8,4 @@ $('#income-disposable.amount.edit').editable('/income/update', {
     indicator	:	'Saving...',
     tooltip		:	'Click to edit...',
 	method		: 	'put'
-  });
+});
