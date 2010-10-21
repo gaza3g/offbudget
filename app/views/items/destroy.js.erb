@@ -13,6 +13,17 @@ $('.item-edit').editable('/item/update', {
 	method		: 	'put'
   });
 
+
+$('#income-disposable .amount .edit').editable('/income/update', {
+    name		:	$(this).attr('name'),
+    id			:	$(this).attr('id'),
+    cancel		:	'Cancel',
+    submit		:	'OK',
+    indicator	:	'Saving...',
+    tooltip		:	'Click to edit...',
+	method		: 	'put'
+});
+
 $('a.delete').click (function(){
         if(confirm("Are you sure?")){
             return true;
