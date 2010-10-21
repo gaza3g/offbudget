@@ -168,6 +168,7 @@ footer nav {
 .budget-edit, .budget-edit-sample {
 	color: #5A2E2E;
 	font-weight: bold;
+	font-size: x-large;
 }
 
 
@@ -180,7 +181,7 @@ li.budget-delete
 {
 	float: right;
 	font-weight: bold;
-
+	margin-top: 7px;
 }
 
 
@@ -190,7 +191,7 @@ li.budget-delete
 .item-edit, .item-edit-sample {
 	color: #0B486B;
 	font-weight: bold;
-	font-size: small;
+	font-size: 11pt;
 }
 
 
@@ -224,14 +225,42 @@ li.item-delete
 }
 
 
+/* Income */
 
+#income-info {
+	margin-top: 5px; 
+	background: #EEDC4A;
+	float:right; 
+	display: inline-block;	
+}
 
+#income-info #income-disposable,
+#income-info #income-deduction {
+	padding: 10px 20px 10px 20px;
+	color: #333;
+}
 
+#income-info #income-disposable .caption,
+#income-info #income-deduction .caption {
+	font-size:large;
+	font-weight: bold;
+}
 
+#income-info #income-disposable .amount, 
+#income-info #income-deduction .amount {
+	font-size: x-large;
+	font-weight: bold;
+}
 
+/* overrides */
 
+.red {	
+	color: red;
+}
 
-
+.green {
+	color: #0D8600;
+}
 
 
 

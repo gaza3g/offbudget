@@ -1,0 +1,18 @@
+<div id="income-disposable">
+	<div class="caption">Your disposable income:</div>
+	<div class="amount">
+		<% if current_user.income %>
+			$<span class="edit" id="<%=current_user.income.id %>"><%= number_to_currency(current_user.income.amount, :unit => "", :delimiter => "") %></span>
+		<% else %>
+			<%= render 'incomes/income_form' %>
+		<% end %>
+	</div>
+</div>
+<div id="income-deduction">
+	<div class="caption">After budget deductions:</div>
+	<% if amount_after_deduction < 0 %>
+		<div class="amount red">$<%= amount_after_deduction %></div>
+	<% else %>
+		<div class="amount green">$<%= amount_after_deduction %></div>
+	<% end%>
+</div>

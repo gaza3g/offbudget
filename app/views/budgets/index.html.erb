@@ -7,14 +7,20 @@
 			<h6>
 				You can edit [<span class="budget-edit-sample">Budget</span>],  
 				[<span class="item-edit-sample">Item</span>] and
-				[<span class="item-amount-sample">$ Amount</span>] by clicking on them.</h6>
+				[<span class="item-amount-sample">$ Amount</span>] by clicking on them.
+			</h6>
 		</td>
 	</tr>
 	<tr>
-		<td class="round">
-			<div id="budget-list">
-	        	<%= render 'shared/budget_info' %>
-			</div>
+		<td class="round" style="padding-bottom: 30px;padding-top: 10px;padding-left: 10px;">
+			<ul style="margin: 0; padding:0;">
+				<li id="budget-list" style="display: inline-block">
+		        	<%= render 'shared/budget_info' %>
+				</li>
+				<li id="income-info" class="round">
+					<%= render 'shared/income_info' %>
+				</li>
+			</ul>
 	  	</td>
    	</tr>
   </table>

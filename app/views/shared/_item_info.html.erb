@@ -2,11 +2,11 @@
 
 	<ul>
 		<li>
-			<div style="width: 290px;">
+			<div style="width: 290px;" class="item-<%= item.id %>">
 				<ul style="padding: 0;margin:0">
 					<li class="item-edit" id="<%= item.id %>"><%= item.name %> </li>
 					<strong>$</strong>
-					<li class="item-amount" id="<%= item.id %>"><%= number_to_currency(item.amount, :unit => "") %></li>
+					<li class="item-amount" id="<%= item.id %>"><%= number_to_currency(item.amount, :unit => "", :delimiter => "") %></li>
 					<li class="item-delete" style="font-size: small"> 
 						<%= link_to "delete", item, :remote => true, :class => "delete",
 						 							:method => :delete, 

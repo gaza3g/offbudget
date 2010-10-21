@@ -33,7 +33,9 @@ class ItemsController < ApplicationController
       @old_value = @item.amount
       respond_to do |format|
         if @item.update_attributes( :amount => @new_value )
-          flash[:success] = "Renamed '#{@old_value}' to '#{@new_value}'"
+          flash[:success] = "'#{@item.name}' amount changed from 
+                            '$#{sprintf("%.2f",@old_value)}' to 
+                            '$#{sprintf("%.2f",@new_value)}'"
           format.js
         else
           format.html { render budgets_url }

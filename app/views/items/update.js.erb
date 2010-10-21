@@ -1,1 +1,50 @@
-<%= @new_value %>
+<script type="text/javascript">
+	$("#item-list-<%=@item.budget.id%>").html("<%= escape_javascript(render 'shared/item_info', :budget => Budget.find(@item.budget_id) ) %>")
+	$("#notice").html('<div class="flash success"><%= escape_javascript(flash.delete(:success)) %></div>');
+	$("#income-info").html("<%= escape_javascript(render('shared/income_info')) %>")
+	$(".item-<%=@item.id%>").effect("highlight", {}, 3000);
+	$("#income-deduction .amount").effect("highlight", {}, 3000);
+	$('.item-edit').editable('/item/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put',
+		callback : function(value, settings) {
+	        
+	     },
+		submitdata 	: 	{attribute : "name"}
+	  });
+	
+	$('.item-amount').editable('/item/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put',
+		submitdata 	: 	{attribute : "amount"}
+	  });
+	
+	$('#income-disposable .amount .edit').editable('/income/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put'
+	});
+	
+	$('a.delete').click (function(){
+	        if(confirm("Are you sure?")){
+	            return true;
+	        } else {
+	            //they clicked no.
+	            return false;
+	        }
+	});
+</script>

@@ -5,6 +5,7 @@ class BudgetsController < ApplicationController
     if user_signed_in?
       @budget ||= Budget.new
       @item ||= Item.new
+      @income ||= Income.new
     end
   end
   
