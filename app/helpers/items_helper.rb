@@ -9,7 +9,7 @@ module ItemsHelper
   end
   
   def amount_after_deduction
-    Income.find_by_user_id(current_user.id).amount - consolidate_items_amount
+    #Income.find_by_user_id(current_user.id).amount - consolidate_items_amount
     #not supported in heroku
     #current_user.income.amount - consolidate_items_amount
   end
