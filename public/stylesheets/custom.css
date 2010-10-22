@@ -163,6 +163,15 @@ footer nav {
   list-style: square;
 }
 
+.current-page-caption {
+	font-size: medium; 
+	font-weight: bold;
+	width: 150px;
+	color: white; 
+	text-align: center;
+	margin: 10px 0 10px 0;
+}
+
 /* Budgets */
 
 .budget-edit, .budget-edit-sample {

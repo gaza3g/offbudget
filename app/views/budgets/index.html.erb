@@ -3,7 +3,9 @@
   <table class="front" summary="For signed-in users">
 	<tr>
 		<td class="main">
-			<div style="font-size: x-large; font-weight: bold;text-decoration: underline;">Budgets</div>
+			<div class="round tab-<%=current_tab%> current-page-caption">
+				<%= current_tab.to_s.pluralize.capitalize %>
+			</div>
 			<%= render 'shared/budget_form' %>
 			<h6>
 				You can edit [<span class="budget-edit-sample">Budget</span>],  
