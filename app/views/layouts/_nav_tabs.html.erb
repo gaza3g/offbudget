@@ -1,0 +1,8 @@
+<div>
+	<% tabs_tag :open_tabs => { :class => "tab-container" } do |tab| %>
+	  	<%= tab.dashboard 	'Dashboard', budgets_path, :class => "round tab-item tab-dashboard" %>
+	  	<%= tab.budget 		'Budgets', budgets_path, :class => "round tab-item tab-budget" %>
+	  	<%= tab.daily      	'Daily Expenditure', budgets_path, :class => "round tab-item tab-daily" %>
+	  	<%= tab.report      'Report', budgets_path, :class => "round tab-item tab-report" %>
+	<% end %>
+</div>

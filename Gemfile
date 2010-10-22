@@ -6,6 +6,8 @@ gem 'gravatar_image_tag', '0.1.0'
 gem 'will_paginate', '3.0.pre2'
 gem 'devise', '1.1.3'
 gem 'formtastic', '~> 1.1.0'
+gem "tabs_on_rails"
+
 
 
 group :development do

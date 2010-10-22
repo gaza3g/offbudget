@@ -1,5 +1,6 @@
 class BudgetsController < ApplicationController
   before_filter :load
+  set_tab :budget
   
   def load
     if user_signed_in?

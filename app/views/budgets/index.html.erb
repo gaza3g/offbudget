@@ -1,8 +1,9 @@
 <% if user_signed_in? %>
+
   <table class="front" summary="For signed-in users">
 	<tr>
 		<td class="main">
-			<h1 class="micropost">Budgets</h1>
+			<div style="font-size: x-large; font-weight: bold;text-decoration: underline;">Budgets</div>
 			<%= render 'shared/budget_form' %>
 			<h6>
 				You can edit [<span class="budget-edit-sample">Budget</span>],  
