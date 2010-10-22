@@ -257,7 +257,9 @@ li.item-delete
 
 .tab-container {
 	margin: 0;
-	padding: 0;
+	padding: 10px 0 10px 0 ;
+	padding-left: 60px;
+	background-color: #E6E5E3;
 }
 
 .tab-container .current {
@@ -278,10 +280,10 @@ li.item-delete
 }
 
 .tab-dashboard {
-	background-color: #E12B42;
+	background-color: #303B3D;
 }
 .tab-budget {
-	background-color: #303B3D;
+	background-color: #E12B42;
 }
 .tab-daily {
 	background-color: #A6B479;
