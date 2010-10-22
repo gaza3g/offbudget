@@ -6,8 +6,8 @@
 					<li class="budget-edit" id="<%=budget.id%>"><%=budget.name %></li>
 					<li class="budget-delete"> <%= link_to "delete", budget, 
 															:remote => true, 
-															:class => "budget-delete-link",
 															:method => :delete,
+															:confirm => 'Are you sure?',
 															:title => "Delete #{budget.name}" %>
 					</li>
 				</ul>
@@ -31,17 +31,6 @@
 	    indicator	:	'Saving...',
 	    tooltip		:	'Click to edit...',
 		method		: 	'put'
-	});
-	
-	$('a.budget-delete-link').click (function(){
-	    if(confirm("Are you sure?"))
-		{
-	        return true;
-	    } 
-		else 
-		{
-	        return false;
-	    }
 	});
 <% end -%>
 

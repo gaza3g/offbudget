@@ -19,7 +19,8 @@
 	<% end %>
 </div>
 
-<% javascript_tag  do -%>
+<%= javascript_tag  do -%>
+
     $('#income-disposable .amount .edit').editable('/income/update', {
 	    name		:	$(this).attr('name'),
 	    id			:	$(this).attr('id'),

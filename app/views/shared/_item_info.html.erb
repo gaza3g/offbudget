@@ -8,8 +8,9 @@
 					<strong>$</strong>
 					<li class="item-amount" id="<%= item.id %>"><%= number_to_currency(item.amount, :unit => "", :delimiter => "") %></li>
 					<li class="item-delete" style="font-size: small"> 
-						<%= link_to "delete", item, :remote => true, :class => "item-delete-link",
+						<%= link_to "delete", item, :remote => true,
 						 							:method => :delete, 
+													:confirm => 'Are you sure?',
 													:title => "Delete #{item.name}" %>
 					</li>
 				</ul>
@@ -41,17 +42,6 @@
 	    tooltip		:	'Click to edit...',
 		method		: 	'put',
 		submitdata 	: 	{attribute : "amount"}
-	});
-	
-	$('a.item-delete-link').click (function(){
-	    if(confirm("Are you sure?"))
-		{
-	        return true;
-	    } 
-		else 
-		{
-	       	return false;
-	    }
 	});
 	
 
