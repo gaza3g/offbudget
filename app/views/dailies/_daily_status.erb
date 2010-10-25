@@ -4,6 +4,12 @@
 	<div class="amount"><%= number_to_currency(get_daily_expenditure.sum('amount'), :unit => "$") %></div>
 </div>
 <div id="today-total">
+	<div class="caption">Amount already spent:</div>
+	<div class="amount"><%= number_to_currency(get_monthly_expenditure.sum('amount'), :unit => "$") %></div>
+</div>
+<div id="today-total">
 	<div class="caption">Budget left for this month:</div>
 	<div class="amount"><%= number_to_currency(get_amount_left_this_month, :unit => "$") %></div>
 </div>
+
+

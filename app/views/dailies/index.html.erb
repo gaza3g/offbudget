@@ -15,8 +15,9 @@
 					<div id="daily-list" style="margin-bottom: 20px;">
 						<%= render 'daily_info', :dailies => get_daily_expenditure %>
 					</div>
-					<hr style="background-color: #aaa;">
-	        		<%= render 'daily_form', :daily => Daily.new %>
+					<div id="daily-form">
+	        			<%= render 'daily_form', :daily => Daily.new %>
+					</div>
 				</li>
 				<li id="daily-status" class="round">
 					<%= render 'daily_status' %>

@@ -8,6 +8,14 @@
 		<% end %>
 	</div>
 </div>
+
+<div id="income-deduction">
+	<% if current_user.income %>
+	<div class="caption">Monthly Expenditure:</div>
+	<div class="amount"><%= number_to_currency(consolidate_items_amount, :unit => "$") %></div>
+	<% end %>
+</div>
+
 <div id="income-deduction">
 	<% if current_user.income %>
 	<div class="caption">After budget deductions:</div>

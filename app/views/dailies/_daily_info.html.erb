@@ -1,4 +1,5 @@
-<h6><%= "Purchases today:" unless dailies.empty? %></h6>
+<% if dailies.any? %>
+<h6>Purchases today:</h6>
 <% dailies.each do |daily| %>
 	<ul style="margin: 0; padding:0;">
 		<li>
@@ -17,6 +18,8 @@
 			</div>
 		</li>
 	</ul>
+<% end %>
+<hr style="background-color: #aaa;">
 <% end %>
 
 <% javascript_tag  do -%>
