@@ -223,15 +223,76 @@ li.item-delete
 	font-size: small;
 }
 
-.item-field input[type=text] {
+.item-field input[type=text], .daily-field input[type=text] {
 	font-weight: bold;
-	color: #555152;
+	font-size: medium;
+	color: #444;
 }
 
 .item-amount, .item-amount-sample {
 	font-weight: bold;
 	color: #CC2A41;
 }
+
+
+/* Daily */
+
+.daily-field select {
+	font-weight: bold;
+	font-size: medium;
+	color: #444;
+}
+
+.daily-edit, .daily-edit-sample {
+	color: #544147;
+	font-weight: bold;
+	font-size: medium;
+}
+
+li.daily-edit {
+	width: 200px;
+}
+
+li.daily-edit, li.daily-delete, li.daily-amount {
+	display: inline-block;
+}
+
+.daily-amount, .daily-amount-sample {
+	font-weight: bold;
+	color: #CC2A41;
+}
+
+li.daily-delete
+{
+	float: right;
+	font-weight: bold;
+	margin-top: 2px;
+}
+
+#daily-status {
+	margin-top: 5px; 
+	background: #EEDC4A;
+	float:right; 
+	display: inline-block;	
+	width: 200px;
+}
+
+#daily-status #today-total {
+	padding: 10px 20px 10px 20px;
+	color: #333;
+}
+
+#daily-status #today-total .caption {
+	font-size:large;
+	font-weight: bold;
+}
+
+#daily-status #today-total .amount {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+
 
 
 /* Income */

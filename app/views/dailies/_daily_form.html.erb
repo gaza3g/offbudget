@@ -1,0 +1,13 @@
+<%= form_for daily, :remote => true do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+  	<div class="daily-field">
+		<div><strong>What's your expenditure like today? </strong></div>
+		<%= f.label :amount, 'I spent $' %> 
+		<%= f.text_field :amount, :size => 10 %>&nbsp;
+		<%= f.label :name, 'on ' %>
+	    <%= f.text_field :name, :size => 20 %><br />
+		<%= f.label 'This item belongs under ' %>
+		<%= collection_select(:daily, :item_id, @items, :id, :name) %>
+		<%= f.submit "Add" %>
+  	</div>
+<% end %>

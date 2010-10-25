@@ -1,19 +1,23 @@
 Offbudget::Application.routes.draw do
 
-  resources                   :budgets
-  resources                   :items
-  resources                   :incomes
+  get "dailies/index"
+
+  resources                     :budgets
+  resources                     :items
+  resources                     :incomes
+  resources                     :dailies
   
   get       'pages/home'
-  match     '/budget/update', :to => 'budgets#update' 
-  match     '/item/update',   :to => 'items#update' 
-  match     '/income/update', :to => 'incomes#update' 
-  match     '/contact',       :to => 'pages#contact'
-  match     '/about',         :to => 'pages#about'
-  match     '/help',          :to => 'pages#help'
-  devise_for                  :users
+  match     '/budget/update',   :to => 'budgets#update' 
+  match     '/item/update',     :to => 'items#update' 
+  match     '/income/update',   :to => 'incomes#update' 
+  match     '/daily/update',    :to => 'dailies#update'
+  match     '/contact',         :to => 'pages#contact'
+  match     '/about',           :to => 'pages#about'
+  match     '/help',            :to => 'pages#help'
+  devise_for                    :users
 
-  root                        :to => 'pages#index'
+  root                          :to => 'pages#index'
  
  end
  

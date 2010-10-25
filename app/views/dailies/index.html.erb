@@ -1,0 +1,27 @@
+
+<table class="front" summary="For signed-in users">
+	<tr>
+		<td class="main">
+			<div class="round tab-<%=current_tab%> current-page-caption">
+				Daily Expenditure
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="round" style="padding-bottom: 30px;padding-top: 10px;padding-left: 10px;">
+				
+			<ul style="margin: 0; padding:0;">
+				<li id="budget-list" style="display: inline-block">
+					<div id="daily-list" style="margin-bottom: 20px;">
+						<%= render 'daily_info', :dailies => get_daily_expenditure %>
+					</div>
+					<hr style="background-color: #aaa;">
+	        		<%= render 'daily_form', :daily => Daily.new %>
+				</li>
+				<li id="daily-status" class="round">
+					<%= render 'daily_status' %>
+				</li>
+			</ul>
+	  	</td>
+	 </tr>
+</table>

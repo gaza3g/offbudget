@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101021041319) do
+ActiveRecord::Schema.define(:version => 20101025070625) do
 
   create_table "budgets", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(:version => 20101021041319) do
   end
 
   add_index "budgets", ["user_id"], :name => "index_budgets_on_user_id"
+
+  create_table "dailies", :force => true do |t|
+    t.string   "name"
+    t.decimal  "amount",     :precision => 8, :scale => 2
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "incomes", :force => true do |t|
     t.decimal  "amount",     :precision => 8, :scale => 2

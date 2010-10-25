@@ -1,0 +1,47 @@
+<h6><%= "Purchases today:" unless dailies.empty? %></h6>
+<% dailies.each do |daily| %>
+	<ul style="margin: 0; padding:0;">
+		<li>
+			<div style="width: 315px;" class="daily-<%= daily.id %>">
+				<ul style="padding: 0;margin:0">
+					<li class="daily-edit" id="<%=daily.id%>"><%=daily.name %></li>
+					<strong>$</strong>
+					<li class="daily-amount" id="<%= daily.id %>"><%= number_to_currency(daily.amount, :unit => "", :delimiter => "") %></li>
+					<li class="daily-delete"> <%= link_to "delete", daily, 
+															:remote => true, 
+															:method => :delete,
+															:confirm => 'Are you sure?',
+															:title => "Delete #{daily.name}" %>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+<% end %>
+
+<% javascript_tag  do -%>
+
+	$('.daily-edit').editable('/daily/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put',
+		submitdata 	: 	{attribute : "name"}
+	});
+
+	$('.daily-amount').editable('/daily/update', {
+	    name		:	$(this).attr('name'),
+	    id			:	$(this).attr('id'),
+	    cancel		:	'Cancel',
+	    submit		:	'OK',
+	    indicator	:	'Saving...',
+	    tooltip		:	'Click to edit...',
+		method		: 	'put',
+		submitdata 	: 	{attribute : "amount"}
+	});
+	
+
+<% end -%>

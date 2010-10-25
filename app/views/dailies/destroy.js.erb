@@ -1,0 +1,3 @@
+$("#daily-list").html("<%=escape_javascript( render 'daily_info', :dailies => get_daily_expenditure ) %>")
+
+$("#notice").html('<div class="flash success"><%= escape_javascript(flash.delete(:success)) %></div>');
