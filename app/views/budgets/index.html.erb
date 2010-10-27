@@ -1,6 +1,4 @@
-<% if user_signed_in? %>
-
-  <table class="front" summary="For signed-in users">
+<table class="front" summary="For signed-in users">
 	<tr>
 		<td class="main">
 			<div class="round tab-<%=current_tab%> current-page-caption">
@@ -25,12 +23,7 @@
 				</li>
 			</ul>
 	  	</td>
-   	</tr>
-  </table>
-<% else %>
-  <h1>Please sign in or sign up</h1>
+	</tr>
+</table>
 
-  <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
-
-<% end %>
 

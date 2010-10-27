@@ -1,11 +1,14 @@
 Offbudget::Application.routes.draw do
 
+  get "reports/index"
+
   get "dailies/index"
 
   resources                     :budgets
   resources                     :items
   resources                     :incomes
   resources                     :dailies
+  resources                     :reports
   
   get       'pages/home'
   match     '/budget/update',   :to => 'budgets#update' 

@@ -1,5 +1,5 @@
 class DailiesController < ApplicationController
-  
+  before_filter :authenticate_user!
   set_tab :daily
   
   def index
