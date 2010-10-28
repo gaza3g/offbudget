@@ -425,7 +425,7 @@ li.daily-delete
 /* Dashboard */
 td.dashboard .reports-item .breakdown table tr td {
 	background-color: #FFD9E7;
-	font-size: medium;
+	font-size: small;
 }
 
 
