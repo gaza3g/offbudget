@@ -9,6 +9,7 @@ class ReportsController < ApplicationController
     @graph_calculated = generated_calculated_expenses
     @graph_line = generate_daily_expenses_for_current_month
     @items = Budget.all_items(current_user.id)
+
     @daily_most_expensive = Daily.most_expensive_daily_this_month(current_user.id)
     @avg_daily_expenditure = (@data.inject {|sum, n| sum + n })/@data.length
     @overspent_category = calculate_overspent_category
@@ -27,7 +28,8 @@ class ReportsController < ApplicationController
           memo = val
         end
       end
-      overspent_category
+      
+      calculate_overspent_category <= 0 ? "None" : overspent_category
     end
   
     def generate_budgeted_expenses

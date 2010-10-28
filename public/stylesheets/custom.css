@@ -386,13 +386,13 @@ li.daily-delete
 	padding: 10px 0 10px 0;
 	display: inline-block; 
 	vertical-align: top;
-	margin-left: 0;
+	margin-left: 20px;
 }
 
 .reports-item .breakdown {
 	margin-right: 0px; 
 	background: #EEDC4A;
-	float:right; 
+	 
 	display: inline-block;	
 	padding: 5px 1px 1px 1px;
 }
