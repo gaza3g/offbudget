@@ -1,0 +1,36 @@
+<table class="front" summary="For signed-in users">
+	<tr>
+		<td class="main">
+			<div class="round tab-<%=current_tab%> current-page-caption">
+				Dashboard
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="round dashboard" style="padding-bottom: 30px;padding-top: 10px;">
+				
+			<div id="reports-list" style="margin-bottom: 20px;">	
+				<div class="reports-item">
+					<ul>
+						<li class="round chart" style="background-color: #C2E39A;margin-left: 10px;width:310px;">
+							<%= render 'dailies/daily_status' %>
+						</li>
+						<li class="breakdown round" style="background-color: #F0FBFD;width: 290px; min-height: 265px;display: inline-block;margin-right: 10px;">
+							<%= render 'shared/income_info' %>
+						</li>
+					</ul>
+				</div>
+				<div class="reports-item">
+					<ul>
+						<li class="round chart" style="margin-left: 10px;">
+								<%=image_tag(@graph_line, :alt => "Loading charts...") %>
+						</li>
+						<li class="breakdown round" style="background-color:#FFD9E7;width: 290px; min-height: 270px;display: inline-block;margin-right: 10px;">
+							<%= render 'reports/reports_breakdown_stats', :items => @items %>
+						</li>
+					</ul>
+				</div>
+			</div>
+	  	</td>
+	 </tr>
+</table>

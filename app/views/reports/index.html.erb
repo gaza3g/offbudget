@@ -7,23 +7,11 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="round" style="padding-bottom: 30px;padding-top: 10px;padding-left: 10px;">
+		<td class="round" style="padding-bottom: 30px;padding-top: 10px;">
 				
-			<ul style="margin: 0; padding:0;">
-				<li id="budget-list" style="display: inline-block">
-					<div id="daily-list" style="margin-bottom: 20px;">
-						
-						<%= render 'reports_bargraph', :items => @items %>
-						
-					</div>
-					<div id="daily-form">
-	        			
-					</div>
-				</li>
-				<li id="daily-status" class="round" style="width: 250px;">
-					dsadsaaaaaaaaaaaaaaaa
-				</li>
-			</ul>
+			<div id="reports-list" style="margin-bottom: 20px;">	
+				<%= render 'reports_bargraph', :items => @items %>
+			</div>
 	  	</td>
 	 </tr>
 </table>

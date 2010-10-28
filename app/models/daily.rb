@@ -14,6 +14,12 @@ class Daily < ActiveRecord::Base
     dailies = dailies.sum("amount")
   end
   
+  def self.most_expensive_daily_this_month(user_id)
+    items = Budget.all_items(user_id)
+    dailies = Daily.where({:item_id => items, :created_at => (Time.zone.now.beginning_of_month..Time.zone.now.end_of_day)}).order("amount DESC")
+    dailies.first
+  end
+  
   private
     
     def capitalize_name

@@ -1,11 +1,28 @@
-<div>
-	<%=image_tag(@graph_budgeted, :alt => "Loading charts...") %>
+<div class="reports-item">
+	<ul>
+		<li class="round chart">
+			<%=image_tag(@graph_budgeted, :alt => "Loading charts...") %>
+		</li>
+		<li class="breakdown round" style="display: inline-block"><%= render 'reports_breakdown_budgeted', :items => @items %></li>
+	</ul>
 </div>
 
-<div>
-	<%=image_tag(@graph_calculated, :alt => "Loading charts...") %>
+<div class="reports-item">
+	<ul>
+		<li class="round chart">
+			<%=image_tag(@graph_calculated, :alt => "Loading charts...") %>
+		</li>
+		<li class="breakdown round" style="display: inline-block"><%= render 'reports_breakdown_expenditure', :items => @items %></li>
+	</ul>
 </div>
 
-<div>
-	<%=image_tag(@graph_line, :alt => "Loading charts...") %>
+
+<div class="reports-item">
+	<ul>
+		<li class="round chart">
+				<%=image_tag(@graph_line, :alt => "Loading charts...") %>
+		</li>
+		<li class="breakdown round" style="display: inline-block"><%= render 'reports_breakdown_stats', :items => @items %></li>
+	</ul>
 </div>
+

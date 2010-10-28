@@ -1,0 +1,34 @@
+<div class="breakdown-container">
+	<table>
+		<tr>
+			<td class="desc" style="text-align:left;">Most Expensive Item:</td>
+			<td>
+				<%=@daily_most_expensive.name%>
+				<span class="green" style="font-size:x-small;">
+					($<%=@daily_most_expensive.amount%>)
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td class="desc" style="text-align:left;">Highest Amount Spent in a Day:</td>
+			<td>
+				<%="#{@data.index(@data.max)+1}-#{Time.zone.now.month}-#{Time.zone.now.year}"%>
+				<span class="green" style="font-size:x-small;">
+					($<%=@data.max%>)
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td class="desc" style="text-align:left;">Average Daily Expenditure:</td>
+			<td>
+				<%=number_to_currency(@avg_daily_expenditure)%>
+			</td>
+		</tr>
+		<tr>
+			<td class="desc" style="text-align:left;">Most Overspent Category:</td>
+			<td>
+				<%=@overspent_category%>
+			</td>
+		</tr>
+	</table>
+</div>

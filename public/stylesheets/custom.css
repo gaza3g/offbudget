@@ -284,17 +284,17 @@ li.daily-delete
 	width: 200px;
 }
 
-#daily-status #today-total {
+.today-item {
 	padding: 10px 20px 10px 20px;
 	color: #333;
 }
 
-#daily-status #today-total .caption {
+.today-item .caption {
 	font-size:large;
 	font-weight: bold;
 }
 
-#daily-status #today-total .amount {
+.today-item .amount {
 	font-size: x-large;
 	font-weight: bold;
 }
@@ -311,20 +311,20 @@ li.daily-delete
 	display: inline-block;	
 }
 
-#income-info #income-disposable,
-#income-info #income-deduction {
+#income-disposable,
+#income-deduction {
 	padding: 10px 20px 10px 20px;
 	color: #333;
 }
 
-#income-info #income-disposable .caption,
-#income-info #income-deduction .caption {
+#income-disposable .caption,
+#income-deduction .caption {
 	font-size:large;
 	font-weight: bold;
 }
 
-#income-info #income-disposable .amount, 
-#income-info #income-deduction .amount {
+#income-disposable .amount, 
+#income-deduction .amount {
 	font-size: x-large;
 	font-weight: bold;
 }
@@ -368,6 +368,66 @@ li.daily-delete
 .tab-report {
 	background-color: #0B8471;
 }
+
+
+/* Reports */
+
+#reports-list ul{
+	padding-left: 10px;
+	margin: 0;
+}
+
+.reports-item {
+	margin-top: 20px;
+}
+
+.reports-item .chart {
+	background-color: #fff;
+	padding: 10px 0 10px 0;
+	display: inline-block; 
+	vertical-align: top;
+	margin-left: 0;
+}
+
+.reports-item .breakdown {
+	margin-right: 0px; 
+	background: #EEDC4A;
+	float:right; 
+	display: inline-block;	
+	padding: 5px 1px 1px 1px;
+}
+
+.reports-item .breakdown .breakdown-container{
+	padding:5px; 
+	width: 240px;
+}
+
+.reports-item .breakdown table{
+	padding: 0;
+	margin: 0;
+}
+
+
+.reports-item .breakdown table tr td {
+	background-color: #EEDC4A;
+	font-size: small;
+	font-weight: bold;
+	
+}
+
+.reports-item .breakdown table tr td.desc {
+	text-align: right;
+	width: 150px;
+	vertical-align: top;
+}
+
+
+/* Dashboard */
+td.dashboard .reports-item .breakdown table tr td {
+	background-color: #FFD9E7;
+	font-size: medium;
+}
+
 
 /* Overrides */
 

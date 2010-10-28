@@ -1,5 +1,9 @@
 $("#daily-list").html("<%=escape_javascript( render 'daily_info', :dailies => get_daily_expenditure ) %>")
 
+$("#daily-status").html("<%=escape_javascript( render 'daily_status' ) %>")
+
 $("#notice").html('<div class="flash success"><%= escape_javascript(flash.delete(:success)) %></div>');
+
+$(".today-item .amount").effect("highlight", {}, 3000);
 
 $("#new_daily")[0].reset();
