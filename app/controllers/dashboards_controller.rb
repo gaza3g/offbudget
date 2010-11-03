@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
   
   def index
     @graph_line = generate_daily_expenses_for_current_month
-    @items = Budget.all_items(0)
+    @items = Budget.all_items(current_user.id)
     @daily_most_expensive = Daily.most_expensive_daily_this_month(current_user.id)
     @avg_daily_expenditure = (@data.inject {|sum, n| sum + n })/@data.length
     @overspent_category = calculate_overspent_category

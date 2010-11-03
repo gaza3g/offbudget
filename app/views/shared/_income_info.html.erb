@@ -4,7 +4,7 @@
 		<% if current_user.income %>
 			$<span class="edit" id="<%=current_user.income.id %>"><%= number_to_currency(current_user.income.amount, :unit => "", :delimiter => "") %></span>
 		<% else %>
-			<%= render 'incomes/income_form' %>
+			<%= render 'incomes/income_form', :income => Income.new %>
 		<% end %>
 	</div>
 </div>
