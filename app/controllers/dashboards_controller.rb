@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
   
   def index
     @graph_line = generate_daily_expenses_for_current_month
-    @items = Budget.all_items(current_user.id)
+    @items = Budget.all_items(0)
     @daily_most_expensive = Daily.most_expensive_daily_this_month(current_user.id)
     @avg_daily_expenditure = (@data.inject {|sum, n| sum + n })/@data.length
     @overspent_category = calculate_overspent_category
@@ -16,17 +16,21 @@ class DashboardsController < ApplicationController
   private
   
     def calculate_overspent_category
-      overspent_category = @items.first.name      
-      calculate_overspent_category = @longest = @items.flatten.inject(0) do |memo,item|   
-        val = item.dailies_total - item.amount
-        if memo >= val
-          memo
-        else
-          overspent_category = item.name
-          memo = val
+      if @items.any?
+        overspent_category = @items.first.name      
+        calculate_overspent_category = @longest = @items.flatten.inject(0) do |memo,item|   
+          val = item.dailies_total - item.amount
+          if memo >= val
+            memo
+          else
+            overspent_category = item.name
+            memo = val
+          end
         end
+        overspent_category
+      else
+        "None"
       end
-      overspent_category
     end
     
     def generate_daily_expenses_for_current_month
