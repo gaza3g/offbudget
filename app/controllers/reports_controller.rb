@@ -18,18 +18,21 @@ class ReportsController < ApplicationController
   private
   
     def calculate_overspent_category
-      overspent_category = @items.first.name      
-      calculate_overspent_category = @longest = @items.flatten.inject(0) do |memo,item|   
-        val = item.dailies_total - item.amount
-        if memo >= val
-          memo
-        else
-          overspent_category = item.name
-          memo = val
-        end
+      if @items.any?
+        overspent_category = @items.first.name      
+        calculate_overspent_category = @longest = @items.flatten.inject(0) do |memo,item|   
+          val = item.dailies_total - item.amount
+          if memo >= val
+            memo
+          else
+            overspent_category = item.name
+            memo = val
+          end
+        end  
+        calculate_overspent_category <= 0 ? "None" : overspent_category
+      else
+        "None"
       end
-      
-      calculate_overspent_category <= 0 ? "None" : overspent_category
     end
   
     def generate_budgeted_expenses
