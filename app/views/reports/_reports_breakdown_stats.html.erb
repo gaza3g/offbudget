@@ -1,5 +1,6 @@
 <div class="breakdown-container">
 	<table>
+		<% if !@daily_most_expensive.nil? %>
 		<tr>
 			<td class="desc" style="text-align:left;">Most Expensive Item:</td>
 			<td>
@@ -9,6 +10,7 @@
 				</span>
 			</td>
 		</tr>
+		<% end %>
 		<tr>
 			<td class="desc" style="text-align:left;">Highest Amount Spent in a Day:</td>
 			<td>
